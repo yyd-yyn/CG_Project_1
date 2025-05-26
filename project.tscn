@@ -20,18 +20,21 @@ albedo_texture = ExtResource("1_tou82")
 transform = Transform3D(0.185602, -0.677287, 0.711923, 0.170861, 0.735719, 0.655381, -0.967656, -3.42242e-08, 0.252273, 15.5998, 16.9127, 0)
 
 [node name="Playground" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.60282, 0, 4.73614, 0, 0.1, 0, -4.73614, 0, 1.60282, 0, 0, -1.89009)
+transform = Transform3D(-1.77937, 0, 4.67267, 0, 0.1, 0, -4.67267, 0, -1.77937, 0, 0, -1.89009)
 mesh = SubResource("BoxMesh_7dm0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_udjck")
 
 [node name="dog_" parent="Playground" instance=ExtResource("3_3jgss")]
-transform = Transform3D(0.124552, 0, -0.156483, 0, 10, -1.49012e-07, 0.156483, 0, 0.124552, 0.0183419, -24.0215, 0.411209)
+transform = Transform3D(0.0402122, 0, -0.195916, 0, 10, -1.49012e-07, 0.195916, 0, 0.0402122, 0.0183419, -24.0215, 0.411209)
 
 [node name="ampel_overhead" parent="Playground" instance=ExtResource("4_vsyxl")]
 transform = Transform3D(0.162301, 0, 0.11687, 0, 10, 0, -0.11687, 0, 0.162301, 0.0971014, 0, 0.353667)
 
 [node name="car2" parent="Playground" instance=ExtResource("5_ld1nf")]
 transform = Transform3D(0.168536, 0, 0.107684, 0, 10, 0, -0.107684, 0, 0.168536, 0.27505, 2.06091, -0.224277)
+
+[node name="ampel_pole" parent="Playground" instance=ExtResource("6_jfdm5")]
+transform = Transform3D(-0.0375826, 0, -0.196437, 0, 10, 0, 0.196437, 0, -0.0375826, -0.380616, -5.31581, -0.430884)
 
 [node name="CameraRig" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.92394, 0.382538, 0, -0.382538, 0.92394, -0.211317, 3.74038, 6.35404)
@@ -42,6 +45,3 @@ transform = Transform3D(1, 0, 0, 0, 0.995892, 0.0905458, 0, -0.0905458, 0.995892
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jgss")
-
-[node name="ampel_pole" parent="." instance=ExtResource("6_jfdm5")]
-transform = Transform3D(0.968631, 0, 0.248504, 0, 1, 0, -0.248504, 0, 0.968631, -2.16744, -0.531581, -0.470963)
