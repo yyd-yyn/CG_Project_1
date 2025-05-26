@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://vgf2yoj8ki32" path="res://node_3d.gd" id="1_00rxp"]
 [ext_resource type="Texture2D" uid="uid://c4c7m13rebs54" path="res://MeterGrid (1).png" id="1_tou82"]
 [ext_resource type="PackedScene" uid="uid://10hlu0t5x11u" path="res://dog_.glb" id="3_3jgss"]
-[ext_resource type="PackedScene" uid="uid://bxd0bhwc7ul4j" path="res://ampel_overhead.glb" id="4_vsyxl"]
-[ext_resource type="PackedScene" uid="uid://cd4tridbywvf3" path="res://car.glb" id="5_ld1nf"]
-[ext_resource type="PackedScene" uid="uid://cbnb0t258bwra" path="res://ampel_pole.glb" id="6_jfdm5"]
+[ext_resource type="PackedScene" uid="uid://cu55avp11uert" path="res://ampel_overhead.glb" id="4_vsyxl"]
+[ext_resource type="PackedScene" uid="uid://dgrm87ow4leaa" path="res://car.glb" id="5_ld1nf"]
+[ext_resource type="PackedScene" uid="uid://cwr03dcivys5c" path="res://ampel_pole.glb" id="6_jfdm5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
@@ -24,9 +24,6 @@ transform = Transform3D(1.60282, 0, 4.73614, 0, 0.1, 0, -4.73614, 0, 1.60282, 0,
 mesh = SubResource("BoxMesh_7dm0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_udjck")
 
-[node name="ampel_pole" parent="Playground" instance=ExtResource("6_jfdm5")]
-transform = Transform3D(0.108711, 0, -0.167875, 0, 10, 0, 0.167875, 0, 0.108711, -0.381328, -5.47354, -0.196143)
-
 [node name="dog_" parent="Playground" instance=ExtResource("3_3jgss")]
 transform = Transform3D(0.124552, 0, -0.156483, 0, 10, -1.49012e-07, 0.156483, 0, 0.124552, 0.0183419, -24.0215, 0.411209)
 
@@ -34,7 +31,7 @@ transform = Transform3D(0.124552, 0, -0.156483, 0, 10, -1.49012e-07, 0.156483, 0
 transform = Transform3D(0.162301, 0, 0.11687, 0, 10, 0, -0.11687, 0, 0.162301, 0.0971014, 0, 0.353667)
 
 [node name="car2" parent="Playground" instance=ExtResource("5_ld1nf")]
-transform = Transform3D(0.163717, 0.00569425, 0.114735, -0.3476, 9.99396, 0, -0.114666, -0.00398819, 0.163816, 0.274891, 1.50855, -0.227117)
+transform = Transform3D(0.168536, 0, 0.107684, 0, 10, 0, -0.107684, 0, 0.168536, 0.27505, 2.06091, -0.224277)
 
 [node name="CameraRig" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.92394, 0.382538, 0, -0.382538, 0.92394, -0.211317, 3.74038, 6.35404)
@@ -45,3 +42,6 @@ transform = Transform3D(1, 0, 0, 0, 0.995892, 0.0905458, 0, -0.0905458, 0.995892
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jgss")
+
+[node name="ampel_pole" parent="." instance=ExtResource("6_jfdm5")]
+transform = Transform3D(0.968631, 0, 0.248504, 0, 1, 0, -0.248504, 0, 0.968631, -2.16744, -0.531581, -0.470963)
