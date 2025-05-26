@@ -19,7 +19,8 @@ mesh = SubResource("BoxMesh_7dm0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_udjck")
 
 [node name="CameraRig" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.92394, 0.382538, 0, -0.382538, 0.92394, -0.211317, 3.74038, 5.94209)
+transform = Transform3D(1, 0, 0, 0, 0.92394, 0.382538, 0, -0.382538, 0.92394, -0.211317, 3.74038, 6.14837)
 script = ExtResource("1_00rxp")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0.0430639, -0.104012)
