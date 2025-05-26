@@ -1,26 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://h5vft3awl5lv"]
+[gd_scene load_steps=10 format=3 uid="uid://h5vft3awl5lv"]
 
 [ext_resource type="Script" uid="uid://vgf2yoj8ki32" path="res://node_3d.gd" id="1_00rxp"]
 [ext_resource type="Texture2D" uid="uid://c4c7m13rebs54" path="res://MeterGrid (1).png" id="1_tou82"]
+[ext_resource type="PackedScene" uid="uid://10hlu0t5x11u" path="res://dog_.glb" id="3_3jgss"]
+[ext_resource type="PackedScene" uid="uid://bxd0bhwc7ul4j" path="res://ampel_overhead.glb" id="4_vsyxl"]
+[ext_resource type="PackedScene" uid="uid://cd4tridbywvf3" path="res://car.glb" id="5_ld1nf"]
+[ext_resource type="PackedScene" uid="uid://cbnb0t258bwra" path="res://ampel_pole.glb" id="6_jfdm5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udjck"]
 albedo_texture = ExtResource("1_tou82")
 
+[sub_resource type="Environment" id="Environment_3jgss"]
+
 [node name="main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.0585792, -0.972667, 0.224696, 0.245377, 0.232206, 0.941207, -0.967656, 1.02071e-08, 0.252272, 15.5998, 16.9127, 0)
+transform = Transform3D(0.185602, -0.677287, 0.711923, 0.170861, 0.735719, 0.655381, -0.967656, -3.42242e-08, 0.252273, 15.5998, 16.9127, 0)
 
 [node name="Playground" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(1.60282, 0, 4.73614, 0, 0.1, 0, -4.73614, 0, 1.60282, 0, 0, -1.89009)
 mesh = SubResource("BoxMesh_7dm0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_udjck")
 
+[node name="ampel_pole" parent="Playground" instance=ExtResource("6_jfdm5")]
+transform = Transform3D(0.108711, 0, -0.167875, 0, 10, 0, 0.167875, 0, 0.108711, -0.381328, -5.47354, -0.196143)
+
+[node name="dog_" parent="Playground" instance=ExtResource("3_3jgss")]
+transform = Transform3D(0.124552, 0, -0.156483, 0, 10, -1.49012e-07, 0.156483, 0, 0.124552, 0.0183419, -24.0215, 0.411209)
+
+[node name="ampel_overhead" parent="Playground" instance=ExtResource("4_vsyxl")]
+transform = Transform3D(0.162301, 0, 0.11687, 0, 10, 0, -0.11687, 0, 0.162301, 0.0971014, 0, 0.353667)
+
+[node name="car2" parent="Playground" instance=ExtResource("5_ld1nf")]
+transform = Transform3D(0.163717, 0.00569425, 0.114735, -0.3476, 9.99396, 0, -0.114666, -0.00398819, 0.163816, 0.274891, 1.50855, -0.227117)
+
 [node name="CameraRig" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.92394, 0.382538, 0, -0.382538, 0.92394, -0.211317, 3.74038, 6.14837)
+transform = Transform3D(1, 0, 0, 0, 0.92394, 0.382538, 0, -0.382538, 0.92394, -0.211317, 3.74038, 6.35404)
 script = ExtResource("1_00rxp")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
-transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0.0430639, -0.104012)
+transform = Transform3D(1, 0, 0, 0, 0.995892, 0.0905458, 0, -0.0905458, 0.995892, 0, -0.342167, -3.52713)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3jgss")
